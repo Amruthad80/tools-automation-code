@@ -48,3 +48,9 @@
   args:
     chdir: /actions-runner
   become_user: grunner
+
+- name: install runner service
+  ansible.builtin.shell: ./svc.sh install grunner ; ./svc.sh start
+  args:
+    chdir: /actions-runner
+
