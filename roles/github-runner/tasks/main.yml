@@ -42,15 +42,23 @@
     name: libicu
     state: latest
 
+- name: get the runner count
+  ansible.builtin.shell: |
+    gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /orgs/Amruthad80/actions/runners | jq .total_count
+  register: runner_count
+    
+
 
 - name: configure github runner
   ansible.builtin.shell: ./config.sh --url https://github.com/Amruthad80 --token {{ token.stdout }}  --runnergroup Default --name ec2 --labels rhel --work _work --replace
   args:
     chdir: /actions-runner
   become_user: grunner
+  when: runner_count.stdout == 0
 
 - name: install runner service
   ansible.builtin.shell: ./svc.sh install grunner ; ./svc.sh start
   args:
     chdir: /actions-runner
+  when: runner_count.stdout == 0
 
