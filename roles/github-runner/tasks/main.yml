@@ -8,7 +8,7 @@
   ansible.builtin.shell: set-prompt github-runner
 
 - name: add github runner user
-  ansible.biultin.user:
+  ansible.builtin.user:
     name: grunner
 
 
