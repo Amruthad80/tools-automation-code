@@ -59,11 +59,10 @@
   args:
     chdir: /actions-runner
   become_user: grunner
-  when: runner_count.stdout == 0
+  when: runner_count.stdout == "0"
 
 - name: install runner service
   ansible.builtin.shell: ./svc.sh install grunner ; ./svc.sh start
   args:
     chdir: /actions-runner
-  when: runner_count.stdout == 0
-
+  when: runner_count.stdout == "0"
