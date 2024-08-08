@@ -7,7 +7,7 @@ resource "aws_instance" "tool" {
     instance_market_options {
         market_type = "spot"
         spot_options {
-            instance_interrupt_behavior = "stop"
+            instance_interruption_behavior = "stop"
             spot_instance_type = "persistance"
         }
     }
