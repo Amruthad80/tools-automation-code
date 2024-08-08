@@ -40,7 +40,7 @@ resource "aws_security_group" "tool-sg" {
     }
 }
 
-resource "aws_route53" "record-public" {
+resource "aws_route53_record" "record-public" {
     zone_id = var.hosted_zone_id
     name    = var.name
     type    =  "A"
@@ -48,7 +48,7 @@ resource "aws_route53" "record-public" {
     records  = [aws_instance.tool.public_ip]
 }
 
-resource "aws_route53" "record-private" {
+resource "aws_route53_record" "record-private" {
     zone_id = var.hosted_zone_id
     name    = "${var.name}-internal"
     type    =  "A"
