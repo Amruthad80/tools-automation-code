@@ -1,8 +1,8 @@
 # manual steps
 # sudo curl -L -o /etc/yum.repos.d/gh-cli.repo https://cli.github.com/packages/rpm/gh-cli.repo
-# sudo dnf install sudo dnf install gh -y
+# sudo dnf install gh -y
 # gh auth login
-# gh auth refresh -h github.com -s admin.org
+# gh auth refresh -h github.com -s admin:org
 
 - name: set prompt
   ansible.builtin.shell: set-prompt github-runner
