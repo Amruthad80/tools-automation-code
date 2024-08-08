@@ -12,6 +12,7 @@ resource "aws_instance" "tool" {
         }
     }
 
+
     tags = {
         Name = var.name
     }
