@@ -1,6 +1,6 @@
  name: run vault-setup
-on: [workflow_dispatch]
-jobs:
+ on: [workflow_dispatch]
+ jobs:
   Provision:
     runs-on: self-hosted
     steps:
