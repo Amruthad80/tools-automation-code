@@ -33,9 +33,6 @@
   register: token
   become_user: ec2-user #token can be fetched by ec2-user as gh login was done by that user
 
-- name: print token
-  ansible.builtin.debug:
-    msg: "{{ token }}"
 
 - name: install libicu dependency
   ansible.builtin.dnf:
