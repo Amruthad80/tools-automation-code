@@ -5,8 +5,9 @@
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
+      - run: echo $path
       - name: run vault setup
-        run:  git pull ; ansible-playbook -i vault-internal.devopsb72.online, tool-setup.yml -e ansible_user=${{ secrets.SSH_USER }} -e ansible_password=${{ secrets.SSH_PASS }} -e tool_name=vault
+        run:  ansible-playbook -i vault-internal.devopsb72.online, tool-setup.yml -e ansible_user=${{ secrets.SSH_USER }} -e ansible_password=${{ secrets.SSH_PASS }} -e tool_name=vault
 
 
 
