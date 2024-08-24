@@ -13,3 +13,6 @@
     url: https://dl.k8s.io/release/v1.31.0/bin/linux/amd64/kubectl
     dest: /bin/kubectl
     mode: '0755'
+
+- name: Install MiniKube
+  ansible.builtin.shell: minikube start --force
