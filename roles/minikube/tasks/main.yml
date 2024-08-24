@@ -3,7 +3,7 @@
 
 - name: Extend Disk volume
   ansible.biultin.shell: growpart /dev/nvme0n1 4 ; lvextend -r -L +10G /dev/mapper/RootVG-varVol
-  ignore_eroors: true
+  ignore_errors: true
 
 - name: Install MiniKube
   ansible.builtin.shell: dnf install https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm docker -y
