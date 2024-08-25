@@ -21,7 +21,7 @@ variable "tools" {
 
         }
       minikube = {
-        name          = "minicube"
+        name          = "minikube"
         instance_type = "t3.medium"
         policy_name = []
         ports = {
