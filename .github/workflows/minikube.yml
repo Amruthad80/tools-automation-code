@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: run minikube setup
-        run:  ansible-playbook -i  minikube-internal.devopsb72.online, tool-setup.yml -e ansible_user=${{ secrets.SSH_USER }} -e ansible_password=${{ secrets.SSH_PASS }} -e tool_name=minikube
+        run:  ansible-playbook -i minikube-internal.devopsb72.online, tool-setup.yml -e ansible_user=${{ secrets.SSH_USER }} -e ansible_password=${{ secrets.SSH_PASS }} -e tool_name=minikube
 
 
 
